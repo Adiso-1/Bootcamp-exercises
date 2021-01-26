@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 960px;
+}
+body {
+  background-color: #c7cad6;
+  font-family: roboto;
+  color: #0f0f0f;
+}
+
+.about {
+  text-decoration: underline;
+}
+.contact-card {
+  background: url("/images/stars.jpg") no-repeat center center/cover;
+  color: #fefefe;
+  box-shadow: 0 4px 16px 0 black;
+  float: left;
+  padding: 27px 20px;
+}
+.specialization-card {
+  background: url("/images/stars.jpg") no-repeat center center/cover;
+  color: #fefefe;
+  box-shadow: 0 4px 16px 0 black;
+  float: left;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+.recommandations-card {
+  background: url("/images/stars.jpg") no-repeat center center/cover;
+  color: #fefefe;
+  box-shadow: 0 4px 16px 0 black;
+  float: right;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  width: 55%;
+}
