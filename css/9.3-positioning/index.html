@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.3-positioning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 600px;
+            height: 600px;
+            border: solid #333 0.1px;
+        }
+        div {
+            border: 2px solid #333;
+            position: absolute;
+            text-align: left;
+            font-size: 10px;
+            background-color: #fff;
+        }
+        .one {
+            height: 40%;
+            width: 50%;
+            z-index: 1;
+        }
+        .two {
+            top: 30%;
+            left: 30%;
+            height: 40%;
+            width: 30%;
+            z-index: 2;
+        }
+        .three {
+            bottom: 70px;
+            width: 98%;
+            z-index: 3;
+            height: 150px;
+        }
+        .four {
+            z-index: 4;
+            height: 98%;
+            width: 140px;
+            right: 40px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one">div one</div>
+        <div class="two">div two</div>
+        <div class="three">div three</div>
+        <div class="four">div four</div>
+    </div>
+</body>
+</html>
