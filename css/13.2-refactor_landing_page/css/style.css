@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 500px) {
+  .footer div {
+    block;
+  }
+}
+#home {
+  background: url("../images/programmer-cartoon-character.jpg") no-repeat center
+    center;
+  font-family: roboto;
+  color: #0f0f0f;
+  height: 100vh;
+}
+#home .welcome {
+  padding: 10px;
+}
+#home .welcome img {
+  padding-top: 10px;
+  border-radius: 50px;
+  height: 15vh;
+}
+.section {
+  padding: 10px;
+  width: 50vw;
+}
+.section h3 {
+  text-decoration: underline;
+}
+.section p {
+  padding-top: 10px;
+  line-height: 1.5rem;
+}
+.footer {
+  width: 100vw;
+  padding-left: 10px;
+}
+.footer div {
+  text-align: center;
+  width: 20vw;
+  display: inline-block;
+  margin-bottom: 10px;
+  background: lightblue;
+  color: #333;
+  box-shadow: 0 4px 16px 0 black;
+}
+.footer div p {
+  font-size: 16px;
+}
+.clr {
+  clear: both;
+}

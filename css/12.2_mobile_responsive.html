@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.2 - mobile_responsive</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body div {
+        background: black;
+        color: #fff;
+        border: #fff 1px solid;
+      }
+      .box {
+        margin: 0 auto;
+        width: 200px;
+        display: inline-block;
+      }
+      @media (max-width: 500px) {
+        .box {
+          margin: 30px auto;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>First Item</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+        harum! A neque ratione veritatis cum ullam voluptate distinctio magni
+        odit?
+      </p>
+    </div>
+    <div class="box">
+      <h1>Second Item</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+        harum! A neque ratione veritatis cum ullam voluptate distinctio magni
+        odit?
+      </p>
+    </div>
+    <div class="box">
+      <h1>Third Item</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+        harum! A neque ratione veritatis cum ullam voluptate distinctio magni
+        odit?
+      </p>
+    </div>
+    <div class="box">
+      <h1>Fourth Item</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+        harum! A neque ratione veritatis cum ullam voluptate distinctio magni
+        odit?
+      </p>
+    </div>
+  </body>
+</html>
