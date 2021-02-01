@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>17.3-pseudo_box_color_animate</title>
     <style>
-      header {
+      body {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,28 +13,24 @@
         height: 50vh;
       }
       .container {
-        background: purple;
+        background: red;
         width: 30vw;
         height: 25vh;
-        display: flex;
-      }
-      .container:hover {
-        background: blue;
+        position: relative;
       }
       .container::after {
-        background: red;
+        background: purple;
         content: "";
-        position: relative;
-        left: 50%;
+        position: absolute;
+        height: 100%;
         width: 50%;
+      }
+      .container:hover {
+        background: yellow;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="box-1"></div>
-      </div>
-    </header>
+    <div class="container"></div>
   </body>
 </html>

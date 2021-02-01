@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.5-tooltip</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        color: blue;
+      }
+      .tooltip .tooltiptext {
+        visibility: visible;
+        width: 120px;
+        background-color: yellow;
+        color: purple;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: yellow transparent;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
+      laboriosam voluptas
+      <span class="tooltip"
+        >HOVER <span class="tooltiptext">really nice thing</span></span
+      >
+      aliquid facere mollitia aliquam consequatur ipsam, assumenda expedita nisi
+      nihil nemo tenetur quasi doloribus explicabo, modi quod labore.
+    </p>
+    <h1>content</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At nam minima
+      vitae iure sunt
+      <span class="tooltip"
+        >sint <span class="tooltiptext"> really nice thing</span></span
+      >
+      consequuntur ex officia doloremque, iusto atque, quidem commodi nesciunt
+      repudiandae itaque, animi aut adipisci nisi corrupti non. Quam,
+      voluptatem? Ab praesentium sunt illo cumque! Cupiditate ipsa deserunt vero
+      provident magnam magni sint laudantium eius aperiam.
+    </p>
+  </body>
+</html>

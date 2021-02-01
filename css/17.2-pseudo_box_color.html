@@ -10,25 +10,24 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 50vh;
       }
       .container {
-        background: purple;
+        background: red;
         width: 30vw;
         height: 25vh;
-        display: flex;
+        position: relative;
       }
       .container::after {
-        background: red;
+        background: purple;
         content: "";
-        position: relative;
-        left: 50%;
+        position: absolute;
+        height: 100%;
         width: 50%;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="box-1"></div>
-    </div>
+    <div class="container"></div>
   </body>
 </html>

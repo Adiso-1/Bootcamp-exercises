@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.4-border</title>
+    <style>
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background: black;
+        flex-shrink: 1;
+      }
+      .container {
+        position: absolute;
+        border: purple 5px solid;
+        width: 30vw;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        height: 10vh;
+        width: 50vw;
+        /* border: 1px solid #fff; */
+        background-color: black;
+      }
+      .container::after {
+        content: "";
+        position: absolute;
+        height: 30vh;
+        width: 20vw;
+        /* border: 1px solid #fff; */
+        background-color: black;
+      }
+      h1 {
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Cool Border</h1>
+      </div>
+    </header>
+  </body>
+</html>
