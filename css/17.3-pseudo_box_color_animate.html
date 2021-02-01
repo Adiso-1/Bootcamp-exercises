@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.3-pseudo_box_color_animate</title>
+    <style>
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+      .container {
+        background: purple;
+        width: 30vw;
+        height: 25vh;
+        display: flex;
+      }
+      .container:hover {
+        background: blue;
+      }
+      .container::after {
+        background: red;
+        content: "";
+        position: relative;
+        left: 50%;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="box-1"></div>
+      </div>
+    </header>
+  </body>
+</html>
