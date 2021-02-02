@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.5-spinners</title>
+    <style>
+      :root {
+        --basic-lightning: rebeccapurple;
+        --changing-light: rgb(25, 216, 120);
+      }
+      .container {
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: 50vh;
+      }
+      .shape {
+        width: 100px;
+        height: 100px;
+        border: black 2px solid;
+      }
+      /* First 2 rotating */
+      .circle {
+        border-radius: 50%;
+        animation: rotating 1s infinite linear;
+        border: 2px solid var(--basic-lightning);
+        border-bottom: 2px solid var(--changing-light);
+      }
+      .rotating {
+        border-radius: 50%;
+        animation: rotating 1s infinite linear;
+        border-bottom: 2px solid var(--changing-light);
+      }
+      @keyframes rotating {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      /* Last 2 ligtning buttons */
+      .static,
+      .up3 {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+      .button {
+        width: 15px;
+        height: 15px;
+        background: var(--basic-lightning);
+        border-radius: 50%;
+      }
+      .button-1 {
+        animation: lightning 1s infinite 0.2s linear;
+      }
+      .button-2 {
+        animation: lightning 1s infinite 0.4s linear;
+      }
+      .button-3 {
+        animation: lightning 1s infinite 0.6s linear;
+      }
+      @keyframes lightning {
+        10% {
+          background-color: var(--changing-light);
+        }
+      }
+      /* .up3 {
+        transform: ;
+      } */
+      .button-up-1 {
+        animation: light-up 0.81s infinite 0.27s linear;
+      }
+      .button-up-2 {
+        animation: light-up 0.81s infinite 0.54s linear;
+      }
+      .button-up-3 {
+        animation: light-up 0.81s infinite 0.81s linear;
+      }
+      @keyframes light-up {
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="shape circle"></div>
+      <div class="shape rotating"></div>
+      <div class="shape static">
+        <div class="button button-1"></div>
+        <div class="button button-2"></div>
+        <div class="button button-3"></div>
+      </div>
+      <div class="shape up3">
+        <div class="button button-up-1"></div>
+        <div class="button button-up-2"></div>
+        <div class="button button-up-3"></div>
+      </div>
+    </div>
+  </body>
+</html>

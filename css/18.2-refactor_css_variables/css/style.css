@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --main-color: #333;
+  --card-color: #3c2f2f;
+  --card-text: #fff4e6;
+}
+.first-page {
+  background: url("../images/programmer-cartoon-character.jpg") no-repeat center
+    center;
+  color: #3c2f2f;
+  padding: 10px;
+}
+#header h1 {
+  font-size: 36px;
+}
+#header h2 {
+  font-size: 36px;
+}
+#header img {
+  padding-top: 10px;
+  border-radius: 50px;
+  height: 15vh;
+}
+.section {
+  padding: 10px;
+}
+.section h2 {
+  text-decoration: underline;
+  padding-bottom: 20px;
+}
+.section p {
+  padding-top: 10px;
+  line-height: 1.5rem;
+  padding-bottom: 20px;
+}
+.section li {
+  padding-bottom: 20px;
+}
+.footer {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .card {
+  margin: 0 20px;
+  text-align: center;
+  width: 20vw;
+  background: var(--card-color);
+  color: var(--card-text);
+  box-shadow: 0 4px 16px 0 black;
+}
+.footer div p {
+  font-size: 16px;
+}

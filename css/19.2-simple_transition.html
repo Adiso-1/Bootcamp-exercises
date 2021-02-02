@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Transition</title>
+    <style>
+      body {
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .box::before {
+        content: "";
+        width: 200px;
+        height: 200px;
+        background: purple;
+        position: absolute;
+        transform: translateX(-100%);
+        transition: all 1s ease-in-out;
+      }
+      .box:hover::before {
+        background: green;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

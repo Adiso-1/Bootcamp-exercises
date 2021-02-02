@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.4-navbar_animation</title>
+    <style>
+      body {
+        background-color: rgb(221, 221, 186);
+        color: darkblue;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+      }
+      li {
+        margin: 0 20px;
+        padding: 10px 0;
+        position: relative;
+      }
+      li::before {
+        content: "";
+        position: absolute;
+        transform: translateX(-100%);
+        transition: all 0.5s ease-in-out;
+        border-top: darkblue 1px solid;
+        top: 0;
+      }
+      li:hover:before {
+        width: 100%;
+        position: absolute;
+        border-top: darkblue 1px solid;
+        transform: translateX(0);
+        right: 0;
+        animation-direction: alternate;
+      }
+      li::after {
+        content: "";
+        position: absolute;
+        transform: translateX(100%);
+        bottom: 0%;
+        transition: all 0.5s ease-in-out;
+        border-bottom: darkblue 1px solid;
+        left: 0;
+      }
+      li:hover::after {
+        width: 100%;
+        position: absolute;
+        border-bottom: darkblue 1px solid;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="Home">Home</li>
+      <li class="About">about</li>
+      <li class="Services">Services</li>
+      <li class="Portfolio">Portfolio</li>
+      <li class="Contact">Contact</li>
+    </ul>
+  </body>
+</html>
