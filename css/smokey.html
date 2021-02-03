@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smokey</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+        background: #333;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        transition: all 2s ease-in-out;
+      }
+      ul:hover {
+        transform: translate(100px, -200px);
+      }
+      li {
+        font-size: 3rem;
+        padding: 0 20px;
+        position: relative;
+        /* animation: fade 1s infinite 1s; */
+      }
+      @keyframes fade {
+        100% {
+          opacity: 0;
+        }
+      } ;
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="letter s">S</li>
+        <li class="letter m">M</li>
+        <li class="letter o">O</li>
+        <li class="letter k">K</li>
+        <li class="letter e">E</li>
+        <li class="letter y">Y</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.3-responsive_grid</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header header header"
+          "sidebar content content sidebar-2"
+          "footer footer footer footer";
+        grid-gap: 1rem;
+        height: 50vh;
+      }
+      .container > div {
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .header {
+        grid-area: header;
+        background: #8d5524;
+      }
+      .sidebar {
+        grid-area: sidebar;
+        background: #c68642;
+      }
+      .content {
+        grid-area: content;
+        background: #e0ac69;
+      }
+      .sidebar-2 {
+        grid-area: sidebar-2;
+        background: #ffdbac;
+      }
+      .footer {
+        grid-area: footer;
+        background: #ffdbac;
+      }
+      @media (max-width: 768px) {
+        .container {
+          grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "sidebar-2  sidebar-2  sidebar-2"
+            "footer footer footer";
+        }
+      }
+      @media (max-width: 500px) {
+        .container {
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "sidebar-2"
+            "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Hedear</h1>
+      </div>
+      <div class="sidebar">
+        <h1>sidbar</h1>
+      </div>
+      <div class="content">
+        <h1>content</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          qui soluta aperiam ea perferendis asperiores, excepturi maiores culpa
+          deserunt vero.
+        </p>
+      </div>
+      <div class="sidebar-2">
+        <h1>sidbar 2</h1>
+      </div>
+      <div class="footer">
+        <h1>Footer</h1>
+      </div>
+    </div>
+  </body>
+</html>

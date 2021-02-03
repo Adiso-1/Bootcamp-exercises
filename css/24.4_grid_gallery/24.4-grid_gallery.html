@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.4-grid_gallery</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .image-gallery {
+        height: 50vh;
+        grid-gap: 1rem;
+        display: grid;
+        grid-template-areas:
+          "img-1 img-1 img-2 img-2 img-2 img-3 img-4 img-4"
+          "img-5 img-5 img-2 img-2 img-2 img-8 img-8 img-9"
+          "img-5 img-5 img-6 img-6 img-7 img-8 img-8 img-9"
+          "img-5 img-5 img-6 img-6 img-13 img-13 img-13 img-9"
+          "img-10 img-11 img-11 img-12 img-13 img-13 img-13 img-14";
+      }
+      .image-gallery a {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .img-1 {
+        grid-area: img-1;
+        background-image: url(img/gal-1.jpeg);
+      }
+      .img-2 {
+        grid-area: img-2;
+        background-image: url(img/gal-2.jpeg);
+      }
+      .img-3 {
+        grid-area: img-3;
+        background-image: url(img/gal-3.jpeg);
+      }
+      .img-4 {
+        grid-area: img-4;
+        background-image: url(img/gal-4.jpeg);
+      }
+      .img-5 {
+        grid-area: img-5;
+        background-image: url(img/gal-5.jpeg);
+      }
+      .img-6 {
+        grid-area: img-6;
+        background-image: url(img/gal-6.jpeg);
+      }
+      .img-7 {
+        grid-area: img-7;
+        background-image: url(img/gal-7.jpeg);
+      }
+      .img-8 {
+        grid-area: img-8;
+        background-image: url(img/gal-8.jpeg);
+      }
+      .img-9 {
+        grid-area: img-9;
+        background-image: url(img/gal-9.jpeg);
+      }
+      .img-10 {
+        grid-area: img-10;
+        background-image: url(img/gal-10.jpeg);
+      }
+      .img-11 {
+        grid-area: img-11;
+        background-image: url(img/gal-11.jpeg);
+      }
+      .img-12 {
+        grid-area: img-12;
+        background-image: url(img/gal-12.jpeg);
+      }
+      .img-13 {
+        grid-area: img-13;
+        background-image: url(img/gal-13.jpeg);
+      }
+      .img-14 {
+        grid-area: img-14;
+        background-image: url(img/gal-14.jpeg);
+      }
+      @media (max-width: 768px) {
+        .image-gallery {
+          height: 80vh;
+          grid-template-areas:
+            "img-1 img-1 img-3 img-3"
+            "img-1 img-1 img-5 img-6"
+            "img-7 img-2 img-4 img-4"
+            "img-10 img-8 img-8 img-9"
+            "img-10 img-11 img-12 img-12"
+            "img-13 img-14 img-14 img-14"
+            "img-13 img-14 img-14 img-14";
+        }
+      }
+      @media (max-width: 500px) {
+        .image-gallery {
+          grid-template-areas:
+            "img-1 img-2"
+            "img-3 img-4"
+            "img-5 img-6"
+            "img-7 img-8"
+            "img-9 img-10"
+            "img-11 img-12"
+            "img-13 img-14";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-gallery">
+        <a href="./img/gal-1.jpeg" class="img-1"></a>
+        <a href="./img/gal-2.jpeg" class="img-2"></a>
+        <a href="./img/gal-3.jpeg" class="img-3"></a>
+        <a href="./img/gal-4.jpeg" class="img-4"></a>
+        <a href="./img/gal-5.jpeg" class="img-5"></a>
+        <a href="./img/gal-6.jpeg" class="img-6"></a>
+        <a href="./img/gal-7.jpeg" class="img-7"></a>
+        <a href="./img/gal-8.jpeg" class="img-8"></a>
+        <a href="./img/gal-9.jpeg" class="img-9"></a>
+        <a href="./img/gal-10.jpeg" class="img-10"></a>
+        <a href="./img/gal-11.jpeg" class="img-11"></a>
+        <a href="./img/gal-12.jpeg" class="img-12"></a>
+        <a href="./img/gal-13.jpeg" class="img-13"></a>
+        <a href="./img/gal-14.jpeg" class="img-14"></a>
+      </div>
+    </div>
+  </body>
+</html>
