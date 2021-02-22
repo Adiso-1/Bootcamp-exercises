@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      textarea {
+        width: 500px;
+        height: 100px;
+      }
+      button {
+        display: block;
+        padding: 1rem;
+      }
+      .alert {
+        color: red;
+        display: none;
+      }
+    </style>
+    <title>17.2-text_area</title>
+  </head>
+  <body>
+    <h1>Why are you interestd in this position?</h1>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <h3 class="alert">text should be at least 100 characters</h3>
+    <button type="submit">Click here!</button>
+    <script>
+      let textarea = document.querySelector("textarea");
+      let button = document.querySelector("button");
+      let alert = document.querySelector("h3.alert");
+      button.addEventListener("click", () => {
+        if (textarea.textLength < 100) {
+          alert.style.display = "block";
+        } else {
+          location.reload(); //* just to clear the textarea
+        }
+        textarea.addEventListener("click", () => {
+          alert.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>

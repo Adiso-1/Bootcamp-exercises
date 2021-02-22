@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.1-smiley</title>
+  </head>
+  <body>
+    <style>
+      body {
+        width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      div {
+        display: flex;
+        padding: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      img {
+        width: 50px;
+        padding: 10px;
+        display: none;
+        background: white;
+      }
+    </style>
+    <h3>How many smileys do you want to see</h3>
+    <input class="input" type="text" />
+    <input class="btn" type="submit" value="Submit" />
+    <div class="img">
+      <!-- <img
+        class="smiley"
+        src="https://mpng.subpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg"
+        alt=""
+      /> -->
+    </div>
+
+    <script>
+      let button = document.querySelector(".btn");
+      let input = document.querySelector("input");
+      let smileyCon = document.querySelector(".img");
+
+      button.addEventListener("click", () => {
+        let i = 0;
+        while (i < input.value) {
+          let smileyImg = document.createElement("img");
+          smileyImg.style.display = "flex";
+          smileyImg.src =
+            "https://mpng.subpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg";
+          smileyCon.appendChild(smileyImg);
+          i++;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure JS</title>
+  </head>
+  <body>
+    <script>
+      //container
+      let container = document.createElement("div");
+      document.body.appendChild(container);
+      container.style.width = "1200px";
+      container.style.background =
+        "url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80') no-repeat center center/cover";
+      container.style.margin = "0 auto";
+      container.style.display = "flex";
+      container.style.flexDirection = "column";
+      container.style.color = "#fff";
+
+      // Header
+      let h1 = document.createElement("h1");
+      h1.innerHTML = "This is a pure Javascript web";
+      container.appendChild(h1);
+      h1.style.textAlign = "center";
+      h1.style.textDecoration = "underline";
+
+      // up nav
+      let upNav = document.createElement("ul");
+      upNav.style.listStyle = "none";
+      upNav.style.fontSize = "20px";
+      upNav.style.display = "flex";
+      upNav.style.justifyContent = "space-around";
+
+      let i = 1;
+      while (i < 6) {
+        let sideBarList = document.createElement("li");
+        sideBarList.innerHTML = `nav-${i}`;
+        container.appendChild(upNav);
+        upNav.appendChild(sideBarList);
+        i++;
+        sideBarList.style.marginBottom = "10px";
+        sideBarList.style.cursor = "pointer";
+        sideBarList.style.fontSize = "20px";
+      }
+
+      // Main section
+      let mainSection = document.createElement("p");
+      mainSection.innerHTML = `Hello, this website is based on pure JS.
+      Stocks were mixed while commodity prices rallied, as rising Treasury yields and expectations of higher inflation weighed on equity prices.
+        The S&P 500 pared some losses but held lower intraday, and the index was on track to add for a fifth straight day of gains, for the longest losing streak since February last year. The Dow recovered earlier losses and turned slightly positive. The Nasdaq sharply underperformed, dropping more than 1.5% as tech shares came under more pressure.
+        Some commodity prices performed more strongly, however. U.S. West Texas intermediate crude oil futures (CL=F) and Brent crude futures (BZ=F) both jumped after Goldman Sachs strategists said in a note Monday that they expected Brent prices to reach $70 in the second quarter and $75 in the third quarter this year amid rising demand. WTI crude oil has already gained 23% this year and exceeded prices from the same time last year.
+        Prospects of fast-rising inflation during this year's expected economic recovery have pushed bond prices lower and yields up sharply. The yield on the benchmark 10-year Treasury note (^TNX) briefly ticked above 1.39% on Monday to reach a fresh one-year high, increasing the specter of higher borrowing costs for companies. Prices of copper jumped above $9,000 per ton on the London Metal Exchange, marking the highest level in nine years as tightening supplies, rising inflation and notions of significant infrastructure programs out of the U.S. and other countries led to expectations of increased demand.
+        Since strong COVID-19 vaccine efficacy data was first announced in November, traders have been positioning for the likelihood of a strong economic growth later this year, as the vaccine distribution eventually allows more businesses to reopen. As such, many traders have been rotating away from the high-growth tech stocks that led the indexes higher for much of last year. Instead, they have favored more economically sensitive equities and asset classes in anticipation of a post-pandemic recovery.
+        `;
+      mainSection.style.fontSize = "20px";
+      mainSection.style.maxWidth = "900px";
+      mainSection.style.textAlign = "center";
+      mainSection.style.margin = "0 auto";
+      mainSection.style.padding = "20px 0";
+      container.appendChild(mainSection);
+
+      let footer = document.createElement("div");
+      container.appendChild(footer);
+      footer.style.display = "flex";
+      footer.style.justifyContent = "space-around";
+
+      let footerUl = document.createElement("ul");
+      footerUl.style.listStyle = "none";
+      footer.appendChild(footerUl);
+      let footerUl2 = document.createElement("ul");
+      footerUl2.style.listStyle = "none";
+      footer.appendChild(footerUl2);
+      let footerUl3 = document.createElement("ul");
+      footerUl3.style.listStyle = "none";
+      footer.appendChild(footerUl3);
+      let footerUl4 = document.createElement("ul");
+      footerUl4.style.listStyle = "none";
+      footer.appendChild(footerUl4);
+
+      i = 1;
+      while (i < 6) {
+        let footerli = document.createElement("li");
+        footerUl.appendChild(footerli);
+        footerli.innerHTML = `nav-${i}`;
+        footerli.style.cursor = "pointer";
+        footerli.style.padding = "5px";
+        i++;
+      }
+      i = 1;
+      while (i < 6) {
+        let footerli = document.createElement("li");
+        footerUl2.appendChild(footerli);
+        footerli.innerHTML = `nav-${i}`;
+        footerli.style.cursor = "pointer";
+        footerli.style.padding = "5px";
+        i++;
+      }
+      i = 1;
+      while (i < 6) {
+        let footerli = document.createElement("li");
+        footerUl3.appendChild(footerli);
+        footerli.innerHTML = `nav-${i}`;
+        footerli.style.cursor = "pointer";
+        footerli.style.padding = "5px";
+        i++;
+      }
+      i = 1;
+      while (i < 6) {
+        let footerli = document.createElement("li");
+        footerUl4.appendChild(footerli);
+        footerli.innerHTML = `nav-${i}`;
+        footerli.style.cursor = "pointer";
+        footerli.style.padding = "5px";
+        i++;
+      }
+      footer.style.background = "#000";
+
+      let footerH2 = document.createElement("h2");
+      container.appendChild(footerH2);
+      footerH2.innerHTML = `All rigths reserved - Adi Levy`;
+      footerH2.style.background = "#000";
+      footerH2.style.margin = "0";
+      footerH2.style.color = "#fff";
+      footerH2.style.textAlign = "center";
+      footerH2.style.fontStyle = "italic";
+    </script>
+  </body>
+</html>

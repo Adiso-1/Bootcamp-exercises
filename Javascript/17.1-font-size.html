@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.1-font-size</title>
+    <style>
+      .btn {
+        padding: 0 2rem;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <button class="btn btn-up">+</button>
+    <button class="btn btn-down">-</button>
+    <script>
+      let header = document.querySelector("h1");
+      let buttonUp = document.querySelector(".btn-up");
+      buttonUp.addEventListener("click", () => {
+        let style = window
+          .getComputedStyle(header, null)
+          .getPropertyValue("font-size");
+        let currentSize = parseInt(style);
+        if (currentSize < 100) {
+          currentSize += 2;
+        }
+        header.style.fontSize = currentSize + "px";
+      });
+      let buttonDown = document.querySelector(".btn-down");
+      buttonDown.addEventListener("click", () => {
+        let style = window
+          .getComputedStyle(header, null)
+          .getPropertyValue("font-size");
+        let currentSize = parseInt(style);
+        if (currentSize > 6) {
+          currentSize -= 2;
+        }
+        header.style.fontSize = currentSize + "px";
+      });
+    </script>
+  </body>
+</html>
