@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.3-forEachDOM</title>
+  </head>
+  <body></body>
+  <script>
+    const users = [
+      {
+        id: 167464,
+        firstName: "Jimmy",
+        lastName: "Arnold",
+        email: "jimmya@gmail.com",
+      },
+      {
+        id: 578447,
+        firstName: "Martha",
+        lastName: "Goldman",
+        email: "gold@hotmail.com",
+      },
+      {
+        id: 864578,
+        firstName: "Tim",
+        lastName: "Burton",
+        email: "timmy.hotmail.com",
+      },
+    ];
+    const ol = document.createElement("ol");
+    ol.style.listStyle = "none";
+    document.body.appendChild(ol);
+    users.forEach((el, i) => {
+      const li = document.createElement("li");
+      li.dataset.id = i;
+      li.textContent = el.firstName + el.lastName;
+      ol.appendChild(li);
+    });
+  </script>
+</html>

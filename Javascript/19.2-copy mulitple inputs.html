@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.2-copy mulitple inputs.</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      h2 {
+        padding-bottom: 1rem;
+      }
+      .form {
+        padding: 1rem;
+        border: 1px solid black;
+      }
+      input {
+        font-size: 2rem;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.5rem;
+        width: 50px;
+      }
+      input[type="button"] {
+        background: black;
+        color: white;
+        margin-top: 1rem;
+        padding: 1rem;
+        font-size: 2rem;
+        width: 200px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Text to copy:</h1>
+      <h2>123456</h2>
+      <div>
+        <div class="form">
+          <form class="inputs">
+            <input
+              class="digit digit-1"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+            <input
+              class="digit digit-2"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+            <input
+              class="digit digit-3"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+            <input
+              class="digit digit-4"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+            <input
+              class="digit digit-5"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+            <input
+              class="digit digit-6"
+              type="text"
+              minlength="1"
+              maxlength="1"
+            />
+          </form>
+          <input class="btn" type="button" value="submit"></input>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let codeArray = [];
+    let digitNode = document.querySelectorAll(".digit");
+    let form = document.querySelector("div.form");
+    for (let i = 0; i < digitNode.length; i++) {
+      digitNode[i].addEventListener("input", () => {
+        parseInt(digitNode[i].value)
+        ? i < 5 && digitNode[i + 1].focus()
+        : (digitNode[i].value = "");
+        codeArray.push(digitNode[i].value);
+        let button = document.querySelector(".btn");
+        if (codeArray.length === 6) {
+          location.reload();
+        }
+      });
+    }
+    for (let i = 0; i < digitNode.length; i++) {
+      digitNode[0].addEventListener("paste", () => {
+        let paste = [
+          ...(event.clipboardData || window.clipboardData).getData("text"),
+        ];
+        digitNode[i].value = paste[i];
+        digitNode[digitNode.length - 1].focus();
+        location.reload();
+      });
+    }
+  </script>
+</html>

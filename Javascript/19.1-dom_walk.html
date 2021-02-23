@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.1-dom_walk</title>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+  </body>
+  <script>
+    const start = document.querySelector(".start-here");
+    start.textContent = "main title";
+    let subTitle = document.createElement("li");
+    subTitle.textContent = "sub title 4";
+    start.nextElementSibling.firstElementChild.appendChild(subTitle);
+    start.parentElement.lastElementChild.remove();
+    start.parentElement.parentElement.previousElementSibling.lastElementChild.textContent =
+      "Master Of The Dom";
+    start.parentElement.nextElementSibling.firstElementChild.textContent =
+      " Finally finished!!";
+  </script>
+</html>

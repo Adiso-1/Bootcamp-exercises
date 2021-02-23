@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.1-age</title>
+  </head>
+  <body>
+    <style>
+      .allowd {
+        display: none;
+        color: green;
+      }
+      .not-allowd {
+        color: red;
+        display: none;
+      }
+    </style>
+    <h2>Enter your age</h2>
+    <input type="number" />
+    <input type="submit" />
+    <h3 class="allowd">you can drink appear</h3>
+    <h3 class="not-allowd">you’re too young</h3>
+
+    <script>
+      let input = document.querySelector(`input[type='number']`);
+      let button = document.querySelector(`input[type='submit']`);
+      let allowd = document.querySelector(".allowd");
+      let notAllowd = document.querySelector(".not-allowd");
+
+      button.addEventListener("click", () => {
+        if (input.value) {
+          if (input.value > 18) {
+            allowd.style.display = "block";
+            notAllowd.style.display = "none";
+          } else {
+            notAllowd.style.display = "block";
+            allowd.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

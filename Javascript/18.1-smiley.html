@@ -22,20 +22,13 @@
       img {
         width: 50px;
         padding: 10px;
-        display: none;
         background: white;
       }
     </style>
     <h3>How many smileys do you want to see</h3>
-    <input class="input" type="text" />
+    <input class="input" type="number" min="0" />
     <input class="btn" type="submit" value="Submit" />
-    <div class="img">
-      <!-- <img
-        class="smiley"
-        src="https://mpng.subpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg"
-        alt=""
-      /> -->
-    </div>
+    <div class="img"></div>
 
     <script>
       let button = document.querySelector(".btn");
@@ -43,10 +36,10 @@
       let smileyCon = document.querySelector(".img");
 
       button.addEventListener("click", () => {
+        if (document.querySelector("img")) smileyCon.innerHTML = "";
         let i = 0;
         while (i < input.value) {
           let smileyImg = document.createElement("img");
-          smileyImg.style.display = "flex";
           smileyImg.src =
             "https://mpng.subpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg";
           smileyCon.appendChild(smileyImg);
