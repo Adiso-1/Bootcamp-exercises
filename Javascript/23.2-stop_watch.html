@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.2-stop_watch</title>
+    <style>
+      .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        margin: 0 auto;
+      }
+      h1 {
+        width: 200px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid black;
+        display: inline-block;
+        border-radius: 50px;
+      }
+      .buttons {
+        width: 100%;
+      }
+      button {
+        width: 45%;
+        padding: 10px;
+      }
+      .start {
+        color: white;
+        background: green;
+        border-style: none;
+      }
+      .stop {
+        color: white;
+        background: red;
+        border-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="clock"></h1>
+      <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+      </div>
+    </div>
+    <script>
+      function startclock() {
+        setInterval(() => {
+          console.log("hello");
+        }, 1000);
+      }
+      let startBtn = document.querySelector(".start");
+      const startTimer = (e) => startclock();
+      startBtn.addEventListener("click", startTimer);
+
+      let stopBtn = document.querySelector(".stop");
+      const stopTimer = (e) => {
+        clearInterval(startclock());
+      };
+      stopBtn.addEventListener("click", stopTimer);
+
+      //   let clock = document.querySelector(".clock");
+      //   let milseconds = setInterval(() => {}, 1);
+      //   let seconds = setInterval(() => {}, 1000);
+      //   let minutes = setInterval(() => {}, 1000 * 60);
+      //   let timer = `${milseconds}:${seconds}:${minutes}`;
+      //   console.log(timer);
+    </script>
+  </body>
+</html>

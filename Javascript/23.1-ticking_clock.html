@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.1-ticking_clock</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        width: 200px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid black;
+        display: inline-block;
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="clock"></h1>
+    <script>
+      setInterval(() => {
+        const date = new Date();
+        let hours = date
+          .getHours()
+          .toLocaleString("en-us", { minimumIntegerDigits: 2 });
+        let minutes = date
+          .getMinutes()
+          .toLocaleString("en-us", { minimumIntegerDigits: 2 });
+        let seconds = date
+          .getSeconds()
+          .toLocaleString("en-us", { minimumIntegerDigits: 2 });
+        let setClock = `${hours}:${minutes}:${seconds}`;
+        let clock = document.querySelector(".clock");
+        clock.textContent = setClock;
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.2-checkbox.</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        margin: 100px auto;
+        font-size: 24px;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+      form input {
+        margin: 20px;
+        transform: scale(3);
+      }
+      img {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="checkbox">Hello there, would you like to see an image</label>
+      <input type="checkbox" name="checkbox" id="checkbox" />
+      <img id="img" src="https://picsum.photos/200" alt="" />
+    </form>
+    <script>
+      const input = document.querySelector("#checkbox");
+      const img = document.querySelector("#img");
+      input.addEventListener("click", (e) => {
+        console.log(e.target.checked);
+        if (e.target.checked) {
+          img.style.display = "block";
+        } else {
+          img.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

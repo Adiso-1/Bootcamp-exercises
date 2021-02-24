@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.3-guess_my_letter</title>
+    <style>
+      body {
+        background: #f4f4f4;
+      }
+      #container {
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        display: inline;
+        font-size: 20px;
+        padding: 10px;
+        border: 1px solid #000;
+      }
+      .letters-container {
+        font-size: 20px;
+      }
+      button {
+        font-size: 20px;
+        width: 80px;
+        cursor: pointer;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Welcome To Guess My Letter</h1>
+      <div class="box">?</div>
+      <h3 class="guess">Guess a letter</h3>
+      <h2 class="ask-user">Keys guessed</h2>
+      <div class="letters-container"></div>
+      <button type="submit">Yes</button>
+    </div>
+    <script>
+      const guessLetter = document.querySelector(".guess");
+      const letterBox = document.querySelector(".box");
+      const askUser = document.querySelector(".ask-user");
+      const lettersGuessed = document.querySelector(".letters-container");
+      const button = document.querySelector("button[type='submit']");
+      let array = [];
+
+      const handleKeyDown = (e) => {
+        guessLetter.style.color = "red";
+        if (e.key.toLowerCase() === "q") {
+          document.removeEventListener("keydown", handleKeyDown);
+          letterBox.textContent = e.key;
+          guessLetter.textContent = "Right letter!";
+          guessLetter.style.color = "green";
+          askUser.textContent = "Would you like to play again?";
+          lettersGuessed.style.display = "none";
+          button.style.display = "block";
+        } else if (!/[a-zA-Z]/.test(e.key)) {
+          guessLetter.textContent = `${e.key} is not a letter!`;
+        } else if (array.includes(e.key)) {
+          guessLetter.textContent = `${e.key} has already been guessed!`;
+        } else {
+          guessLetter.textContent = "Nope, wrong letter";
+          array.push(e.key);
+          lettersGuessed.innerHTML = array.join(", ");
+        }
+      };
+      document.addEventListener("keydown", handleKeyDown);
+      button.addEventListener("click", (e) => location.reload());
+      /* if the letter is correct:
+        V  1. change the question sign to the letter
+        V  2. tell the user 'Right letter!' in green color instead of guess a letter
+        V  3. ask the user 'Would you like to play again?'
+        V  4. create a button of 'Yes', if the playe clicks it - refresh the page*/
+      /* if the letter is incorrect:
+        V  1. add the letter to keys guessed
+        V  2. say the player 'Nope, wrong guessed' in red color
+        V  3. if the player choose again a chosen letter the him 'd has already been guessed!' DO NOT ADD it to guessed letters
+          */
+    </script>
+  </body>
+</html>
