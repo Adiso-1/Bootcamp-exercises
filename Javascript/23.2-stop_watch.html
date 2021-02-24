@@ -16,12 +16,16 @@
         margin: 0 auto;
       }
       h1 {
-        width: 200px;
+        display: inline;
+      }
+      div.clock {
+        width: 80%;
         padding: 20px;
         text-align: center;
         border: 1px solid black;
         display: inline-block;
         border-radius: 50px;
+        margin: 20px 0;
       }
       .buttons {
         width: 100%;
@@ -44,34 +48,67 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="clock"></h1>
+      <div class="clock">
+        <h1 class="display">00:00:00</h1>
+      </div>
       <div class="buttons">
         <button class="start">Start</button>
         <button class="stop">Stop</button>
       </div>
     </div>
     <script>
-      function startclock() {
-        setInterval(() => {
-          console.log("hello");
-        }, 1000);
-      }
       let startBtn = document.querySelector(".start");
-      const startTimer = (e) => startclock();
-      startBtn.addEventListener("click", startTimer);
-
       let stopBtn = document.querySelector(".stop");
-      const stopTimer = (e) => {
-        clearInterval(startclock());
-      };
-      stopBtn.addEventListener("click", stopTimer);
 
-      //   let clock = document.querySelector(".clock");
-      //   let milseconds = setInterval(() => {}, 1);
-      //   let seconds = setInterval(() => {}, 1000);
-      //   let minutes = setInterval(() => {}, 1000 * 60);
-      //   let timer = `${milseconds}:${seconds}:${minutes}`;
-      //   console.log(timer);
+      let minutes = 0;
+      let seconds = 0;
+      let milseconds = 0;
+
+      let displayMinutes = 0;
+      let displaySeconds = 0;
+      let displayMilseconds = 00;
+
+      function stopWatch() {
+        milseconds++;
+        if (milseconds === 100) {
+          milseconds = 0;
+          seconds++;
+          if (seconds === 60) {
+            seconds = 0;
+            minutes++;
+          }
+        }
+        if (milseconds < 10) {
+          displayMilseconds = "0" + milseconds.toString();
+        } else {
+          displayMilseconds = milseconds;
+        }
+        if (seconds < 10) {
+          displaySeconds = "0" + seconds.toString();
+        } else {
+          displaySeconds = seconds;
+        }
+        if (minutes < 10) {
+          displayMinutes = "0" + minutes.toString();
+        } else {
+          displayMinutes = minutes;
+        }
+        document.querySelector(
+          ".display"
+        ).innerHTML = `${displayMinutes}:${displaySeconds}:${displayMilseconds}`;
+      }
+
+      let interval = null;
+      function startStopTimer(e) {
+        if (e.target.textContent === "Start") {
+          interval = setInterval(stopWatch, 10);
+        } else {
+          clearInterval(interval);
+        }
+      }
+
+      startBtn.addEventListener("click", startStopTimer);
+      stopBtn.addEventListener("click", startStopTimer);
     </script>
   </body>
 </html>
