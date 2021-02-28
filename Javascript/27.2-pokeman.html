@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27.2-pokeman</title>
+  </head>
+  <body>
+    <script>
+      function Pokemon(pokemonName, pokemonType, pokemonAttackList) {
+        this.name = pokemonName;
+        this.type = pokemonType;
+        this.attackList = pokemonAttackList;
+      }
+      Pokemon.prototype.callPokemon = function () {
+        console.log(`I chose you ${this.name}`);
+      };
+      Pokemon.prototype.attack = function (attackNumber) {
+        console.log(`${this.name} used ${this.attackList[attackNumber]}`);
+      };
+      const Squirtle = new Pokemon("Squirtle", "water", [
+        "splash",
+        "spray",
+        "flood",
+      ]);
+      const Charmander = new Pokemon("Charmander", "fire", [
+        "burn",
+        "Scorching",
+        "Caress",
+      ]);
+      const Balbazor = new Pokemon("Balbazor", "grass", [
+        "weed",
+        "grass-attack",
+        "plant",
+      ]);
+      Charmander.attack(0);
+      Squirtle.attack(2);
+    </script>
+  </body>
+</html>

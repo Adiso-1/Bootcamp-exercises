@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26.1-fundamentals of this</title>
+  </head>
+  <body>
+    <script>
+      //    1. The this will point to the window because console is a global object on the window
+      //    2.1 The this will point to the glocal scope and search for name. There is no variable called name, that's why we'll get only Hello
+      //    2.2 Yes, we should write it like this with the function word:
+      /* const myObj = {
+                name: "Timmy",
+                greet: function () {
+                console.log(`Hello ${this.name}`);
+                },
+                }; */
+
+      //    3. this in function are points to the window object
+      //    4. Same as answer 3
+      //    5. First we sholud add a click event, second the this will point to the global window because of the arrow function
+      //    5.1 We should change the arrow function to the function word
+    </script>
+  </body>
+</html>
