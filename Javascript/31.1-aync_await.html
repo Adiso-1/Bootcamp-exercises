@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>31.1-aync_await</title>
+  </head>
+  <body>
+    <script>
+      const getIDs = () =>
+        // after 1.5s will return an array of id's
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve([532, 543, 753, 1, 5]);
+          }, 1500);
+        });
+
+      const getRecipe = (recipeID) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(
+            (ID) => {
+              const recipe = {
+                title: "Fresh tomato pasta",
+                publisher: "Pinchas Hodadad",
+              };
+              resolve(`${ID}: ${recipe.title}`);
+            },
+            1500,
+            recipeID // this is the passed argument
+          );
+        });
+      };
+
+      async function makeRecipe() {
+        const id = await getIDs();
+        console.log(id);
+        console.log(await getRecipe(id[2]));
+      }
+      makeRecipe().catch((error) => console.log(error));
+     </script>
+  </body>
+</html>

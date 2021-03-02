@@ -1,0 +1,18 @@
+table {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+caption {
+  font-size: 24px;
+  background: green;
+}
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+th {
+  background: darkkhaki;
+}
