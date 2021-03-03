@@ -10,10 +10,14 @@ const getMovie = async (movie) => {
     const fetchData = await fetch(`${baseEndpoint}&t=${movie}`)
     const movieData = await fetchData.json();
     
+    if (movieData.Response === "False") {
+        return console.log("doesn't work");
+    }
+
     const moviePoster = document.createElement('img');
     moviePoster.src = movieData.Poster;
     posterContainer.appendChild(moviePoster)
-    
+        
     const movieYear = document.createElement('span')
     movieYear.innerText = movieData.Year;
     
@@ -42,7 +46,7 @@ const getMovie = async (movie) => {
     movieDescription.appendChild(movieRating);
     
     const IMDBRating = document.createElement("h4");
-    IMDBRating.innerText = `${movieData.Ratings[0].Source}: ${movieData.Ratings[0].Value}`;
+    IMDBRating.innerText = `IMDB: ${movieData.Ratings[0].Value}`;
     movieDescription.appendChild(IMDBRating);
     
     const rottenRating = document.createElement("h4");
@@ -67,6 +71,7 @@ button.addEventListener('click',(e) => {
     movieDescription.innerHTML = '';
     posterContainer.innerHTML = '';
     e.preventDefault();
-    getMovie(input.value).catch(err = console.log(err));
+    const inputMovie = input.value;
     input.value = '';
+    getMovie(inputMovie).catch((err = console.log(err)));
 })
