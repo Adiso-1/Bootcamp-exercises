@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Box from './Box';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {color: '', shape: ''}
+
+  componentDidMount () {
+    const colors = ['blue', 'yellow', 'red', 'green', 'black'];
+    let i = -1;
+    setInterval(() => {
+      if (i > 3) {
+        i = 0;
+      } else {
+        i++;
+      }
+      this.setState({color: colors[i]})
+    }, 500);
+  }
+  componentDidUpdate () {
+    setTimeout(() => {
+      this.setState({shape: '50%'})
+    }, 2500);
+  }
+  
+  render () {
+    console.log(this.state.color);
+    return (
+      <div className='container'>
+        <Box color={this.state.color} shape={this.state.shape} />
+      </div>
+    )
+  }
 }
 
 export default App;
