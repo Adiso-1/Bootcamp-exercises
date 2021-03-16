@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Box from './Box';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {class: '' , isShow: false}
+  
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({class: 'animation', isShow: true})
+    },1000)  
+  }
+  componentDidUpdate () {
+    setTimeout(()=> {
+      this.setState({isShow: false})
+    },4000)
+  }
+
+  render () {
+    return (
+      this.state.isShow ? <div className={this.state.class}>
+        <Box width='100px' background='blue' />
+        <Box width='200px' background='yellow' />
+        <Box width='150px' background='purple' />
+      </div> : null
+    )
+  }
 }
 
 export default App;
