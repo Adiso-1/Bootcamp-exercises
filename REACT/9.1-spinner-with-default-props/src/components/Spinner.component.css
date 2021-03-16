@@ -1,0 +1,39 @@
+:root {
+	--basic-lightning: rebeccapurple;
+	--changing-light: rgb(25, 216, 120);
+}
+.container {
+	background: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	height: 100vh;
+}
+.shape {
+	width: 100px;
+	height: 100px;
+	border: black 2px solid;
+}
+.circle {
+	border-radius: 50%;
+	animation: rotating 1s infinite linear;
+	border: 2px solid var(--basic-lightning);
+	border-bottom: 2px solid var(--changing-light);
+}
+.circle2 {
+	border-radius: 50%;
+	animation: rotating 1s infinite linear;
+	border: 2px solid #fff;
+	border-bottom: 2px solid red;
+}
+.rotating {
+	border-radius: 50%;
+	animation: rotating 1s infinite linear;
+	border-bottom: 2px solid var(--changing-light);
+}
+@keyframes rotating {
+	to {
+		transform: rotate(360deg);
+	}
+}
