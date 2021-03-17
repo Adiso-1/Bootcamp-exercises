@@ -1,0 +1,28 @@
+.form-page,
+.review-page {
+	border: 1px solid black;
+	padding: 10px;
+	line-height: 1.5rem;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+.btn {
+	background: lightseagreen;
+	color: #fff;
+	border: 1px solid transparent;
+	padding: 5px;
+	margin: 2px;
+	width: 30%;
+	transition: all 0.2s;
+	outline: none;
+}
+.btn:hover {
+	color: lightseagreen;
+	background: #fff;
+	border: 1px solid red;
+}
