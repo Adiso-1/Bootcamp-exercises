@@ -26,7 +26,11 @@ class App extends React.Component {
 
 	drawPerson = () => {
 		const myArr = this.state.over1990.map((person, i) => {
-			return <Card key={i} obj={person} />;
+			return (
+				<div key={i}>
+					<Card obj={person} />
+				</div>
+			);
 		});
 		return myArr;
 	};
