@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+img {
+	width: 150px;
+	height: 150px;
+}
+a {
+	margin-right: 10px;
+}
+.product {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.navbar {
+	display: flex;
+	justify-content: center;
+	background: lightgreen;
+}
+.home-page,
+.products-container {
+	padding: 10px;
+	height: 85vh;
+	background: lightslategrey;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.home-page {
+	align-items: center;
+}

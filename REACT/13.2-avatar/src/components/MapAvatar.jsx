@@ -15,6 +15,7 @@ class MapAvatar extends React.Component {
 			]);
 		}
 		await this.setState({ avatars });
+		//! Better using promise.all
 	}
 
 	render() {
