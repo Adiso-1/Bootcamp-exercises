@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const data = [
+	{ name: 'CSS', completed: true },
+	{ name: 'JavaScript', completed: true },
+	{ name: 'Learn React', completed: false },
+	{ name: 'Learn mongoDB', completed: false },
+	{ name: 'Learn Node JS', completed: false },
+];
+export default () => {
+	const [toDo, setTodo] = useState(data);
 
-export default App;
+	const handleClick = (e, index) => {
+		const arr = [...toDo];
+		arr[index].completed = !arr[index].completed;
+		setTodo(arr);
+	};
+
+	const toDoCheck = toDo.map((el, index) => {
+		return el.completed ? (
+			<div className="item" key={index}>
+				<p style={{ textDecoration: 'line-through' }} className="completed">
+					{el.name}
+				</p>
+				<span className="unCheck" onClick={(e) => handleClick(e, index)}>
+					&#10005;
+				</span>
+			</div>
+		) : (
+			<div className="item" key={index}>
+				<p className="not-completed">
+					{el.name}
+					<span className="check" onClick={(e) => handleClick(e, index)}>
+						&#10003;
+					</span>
+				</p>
+			</div>
+		);
+	});
+
+	return <div className="container">{toDoCheck}</div>;
+};
