@@ -4,9 +4,16 @@ import axios from 'axios';
 // '?action=query&list=search&format=json&origin=*&srsearch=programming'
 const Search = () => {
 	const [term, setTerm] = useState('programming');
+	const [debounceTerm, setDebounceTerm] = useState(term);
 	const [results, setResults] = useState([]);
 
-	console.log(results);
+	useEffect(() => {
+		const timerId = setTimeout(() => {
+			setDebounceTerm(term);
+		}, 1000);
+		return () => clearTimeout(timerId);
+	}, [term]);
+
 	useEffect(() => {
 		const search = async () => {
 			const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
@@ -15,16 +22,13 @@ const Search = () => {
 					list: 'search',
 					origin: '*',
 					format: 'json',
-					srsearch: term,
+					srsearch: debounceTerm,
 				},
 			});
-
 			setResults(data.query.search);
 		};
-		if (term) {
-			search();
-		}
-	}, [term]);
+		search();
+	}, [debounceTerm]);
 
 	const rederedResults = results.map((result) => {
 		return (
