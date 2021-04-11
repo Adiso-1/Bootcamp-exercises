@@ -1,0 +1,8 @@
+ANSWER
+
+javascript has the window object while NodeJs has the global object, the reason is that js runs in the browser.
+js has access to the document object for the current page while NodeJs hasn't.
+functions - because javascript is running in the browser it has functions like "alert" that pops up a message.
+NodeJs enables backend access to databases, file systems, and servers.
+In NodeJs we can build javascript applications that interface with physical things.
+  
