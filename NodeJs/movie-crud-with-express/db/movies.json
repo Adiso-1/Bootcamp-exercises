@@ -1,0 +1,23 @@
+[
+	{
+		"id": "70d8ecb0-b62f-4466-b081-e8297802f2da",
+		"title": "Star Wars",
+		"rating": "8.5",
+		"genre": ["crime", "science"],
+		"length": "200"
+	},
+	{
+		"id": "4e14db64-4a24-4c66-9f76-31ba81b082ad",
+		"title": "The Wolf Of Wall Street",
+		"rating": "10",
+		"genre": ["crime"],
+		"length": "150"
+	},
+	{
+		"id": "878a0556-adca-4d3b-ab6f-1204d323a9bd",
+		"title": "Django",
+		"rating": "8.5",
+		"genre": ["bla bla"],
+		"length": "175"
+	}
+]

@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-const port = 3000;
+const port = 80;
 
 const server = http.createServer((req, res) => {
 	let filePath = req.url;
@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
 	}
 	if (filePath === '/index.js') {
 		res.writeHead(200, {
-			'Content-Type': 'application/json',
+			'Content-Type': 'text/js',
 		});
 		fs.readFile('./index.js', (error, data) => {
 			if (error) {
