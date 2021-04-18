@@ -11,7 +11,8 @@ function App() {
 	}, []);
 
 	const getMovies = async () => {
-		const { data } = await axios.get('/api/movies');
+		const { data } = await axios.get('api/movies');
+		console.log(data);
 		setMovies(data);
 	};
 	const mapMovies = () => {

@@ -1,5 +1,5 @@
-const express = require('express');
 const path = require('path');
+const express = require('express');
 const app = express();
 const {
 	getMovies,
@@ -11,7 +11,7 @@ const {
 
 const PORT = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // get all movies
 app.get('/api/movies', async (req, res) => {
