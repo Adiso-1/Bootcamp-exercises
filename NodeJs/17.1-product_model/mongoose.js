@@ -59,7 +59,7 @@ const Product = mongoose.model('Product', {
 		},
 		dateAdded: {
 			type: Date,
-			default: new Date(),
+			default: Date.now,
 		},
 	},
 });
