@@ -75,7 +75,14 @@ const product1 = new Product({
 		phone: '0501112222',
 	},
 });
-product1.save();
+product1
+	.save()
+	.then(() => {
+		console.log(product1);
+	})
+	.catch((error) => {
+		console.log('Error: ' + error);
+	});
 
 const product2 = new Product({
 	name: 'Dell xps',
@@ -88,7 +95,14 @@ const product2 = new Product({
 		phone: '0501113333',
 	},
 });
-product2.save();
+product2
+	.save()
+	.then(() => {
+		console.log(product2);
+	})
+	.catch((error) => {
+		console.log('Error: ' + error);
+	});
 
 const product3 = new Product({
 	name: 'Pizza',
@@ -101,4 +115,11 @@ const product3 = new Product({
 		phone: '0501113333',
 	},
 });
-product3.save();
+product3
+	.save()
+	.then(() => {
+		console.log(product3);
+	})
+	.catch((error) => {
+		console.log('Error: ' + error);
+	});
